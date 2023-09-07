@@ -1,9 +1,49 @@
 // *****************  Widget ,statemanagement(stateless and stateful widget), material app, Scaffold *******************
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "App 1",
+//       home: Scaffold(
+//         backgroundColor: Colors.white70,
+//         appBar: AppBar(
+//           // toolbarHeight: 100,
+//           // leadingWidth: 100,
+//           title: const Text("day 4 : Widget"),
+//           leading: const Icon(Icons.home),
+//           backgroundColor: Colors.black,
+//         ),
+//         body: const Center(
+//           child: Text("Hello world"),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+// ***************************** Appbar ALL Property ****************************************
+
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+void main() async {
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,18 +53,95 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "App 1",
-      home: Scaffold(
-        backgroundColor: Colors.white70,
-        appBar: AppBar(
-          // toolbarHeight: 100,
-          // leadingWidth: 100,
-          title: const Text("day 4 : Widget"),
-          leading: const Icon(Icons.home),
-          backgroundColor: Colors.black,
-        ),
-        body: const Center(
-          child: Text("Hello world"),
+      home: DefaultTabController(
+        length: 2, // Number of tabs
+        child: SafeArea(
+          child: Scaffold(
+            appBar: AppBar(
+              key: const Key('myAppBar'), // Unique key
+              leading: IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () {
+                  // Add your action here
+                },
+              ),
+              // automaticallyImplyLeading: false, // No automatic back button
+              title: const Text(
+                'My App',
+                style: TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+              actions: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.search),
+                  onPressed: () {
+                    // Add your search action here
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.settings),
+                  onPressed: () {
+                    // Add your settings action here
+                  },
+                ),
+              ],
+              flexibleSpace: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.blue, Color.fromARGB(255, 13, 214, 40)],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+              ),
+              bottom: const PreferredSize(
+                preferredSize: Size.fromHeight(48.0),
+                child: TabBar(
+                  tabs: <Widget>[
+                    Tab(text: 'Tab 1'),
+                    Tab(text: 'Tab 2'),
+                  ],
+                ),
+              ),
+              elevation: 5.0,
+              scrolledUnderElevation: 2.0,
+              notificationPredicate: (ScrollNotification notification) {
+                return true; // React to all scroll notifications
+              },
+              shadowColor: Colors.grey,
+              surfaceTintColor: Colors.white,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(20.0),
+                ),
+              ),
+              backgroundColor: Colors.blue,
+              foregroundColor: Colors.white,
+              iconTheme: const IconThemeData(color: Colors.white),
+              actionsIconTheme: const IconThemeData(color: Colors.white),
+              // primary: false, // Not the primary app bar
+              centerTitle: true,
+              excludeHeaderSemantics: true,
+              titleSpacing: 0.0,
+              toolbarOpacity: 0.8,
+              bottomOpacity: 0.9,
+              toolbarHeight: 56.0,
+              leadingWidth: 60.0,
+              toolbarTextStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+              titleTextStyle: const TextStyle(
+                fontStyle: FontStyle.italic,
+              ),
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              forceMaterialTransparency: true,
+              clipBehavior: Clip.antiAlias,
+            ),
+            body: const Center(
+              child: Text('Hello, Flutter!'),
+            ),
+          ),
         ),
       ),
     );
@@ -330,15 +447,15 @@ class MyApp extends StatelessWidget {
 //               padding: const EdgeInsets.all(8.0),
 //               child: Column(
 //                 children: [
-//                   TextButton(
-//                     onPressed: () {
-//                       stdout.write("Text Button pressed");
-//                     },
-//                     child: const Text('Click Here !'),
-//                     onLongPress: () {
-//                       stdout.write("Long pressed");
-//                     },
-//                   ),
+// TextButton(
+//   onPressed: () {
+//     stdout.write("Text Button pressed");
+//   },
+//   child: const Text('Click Here !'),
+//   onLongPress: () {
+//     stdout.write("Long pressed");
+//   },
+// ),
 //                   const SizedBox(
 //                     height: 20,
 //                   ),
@@ -3662,6 +3779,18 @@ class MyApp extends StatelessWidget {
 // class _MyAppState extends State<MyApp> {
 //   final CarouselController controller = CarouselController();
 //   final List<String> urlImages = [
+//     'https://i.pinimg.com/736x/34/7f/c4/347fc4edd20259b416cb80b70e678161.jpg',
+//     'https://i.pinimg.com/474x/f1/0d/62/f10d626ce52523357ac621454fd28bcf.jpg',
+//     'https://i.pinimg.com/474x/98/4c/fe/984cfe0c5c541ecfc0974bdae3e8e35d.jpg',
+//     'https://i.pinimg.com/474x/0c/8b/c8/0c8bc83812858e1a8877aba392d16710.jpg',
+//     'https://i.pinimg.com/474x/f9/e5/f0/f9e5f0a54288e9df3fd7fc69cc38ec19.jpg',
+//     'https://i.pinimg.com/474x/1e/a8/31/1ea831ebd9c116b70c91b8b65bd802a7.jpg',
+//     'https://i.pinimg.com/474x/a1/10/b4/a110b45fdb22beda7c4a595fa7cf9dc9.jpg',
+//     'https://i.pinimg.com/474x/a8/20/42/a82042e9b865984f61658847ab2aedcc.jpg',
+//     'https://i.pinimg.com/474x/33/16/fb/3316fbe9c510a9451625f26e8f9326a4.jpg',
+//     'https://i.pinimg.com/474x/b6/7e/e6/b67ee640340bf451bc422803c440895b.jpg',
+//     'https://i.pinimg.com/474x/bb/88/e5/bb88e509dda004e9a2adcbe22e90e18b.jpg',
+//     'https://i.pinimg.com/474x/86/f7/d1/86f7d11fa2d09ee6426adc36b81543cf.jpg',
 //     'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600',
 //     'https://images.pexels.com/photos/1662145/pexels-photo-1662145.jpeg?auto=compress&cs=tinysrgb&w=600',
 //     'https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -3672,13 +3801,16 @@ class MyApp extends StatelessWidget {
 //     'https://www.worldatlas.com/r/w960-q80/upload/45/17/72/shutterstock-571847170.jpg',
 //     'https://www.hercircle.in/hcm/EngageImage/1A13836D-9D17-43E7-A4BA-C7FC5EFA33FD/D/8CC6C08D-189C-45DE-A2A7-BB6E496B3338.jpg',
 //     'https://images.luxuryescapes.com/q_auto:good,c_fill,g_auto,w_1920,ar_16:9/7w6ov43xqju1nkgzfxt.webp',
-//     'https://c4.wallpaperflare.com/wallpaper/396/67/717/bmw-motorcycle-vehicle-bmw-s1000rr-wallpaper-preview.jpg',
+//     'https://i.pinimg.com/474x/d9/90/96/d9909698afb3026802216945e5d9ee0a.jpg',
+//     // 'https://c4.wallpaperflare.com/wallpaper/396/67/717/bmw-motorcycle-vehicle-bmw-s1000rr-wallpaper-preview.jpg',
+//     'https://i.pinimg.com/474x/60/7e/cc/607ecc1341fa5e81c01b6e6dd83a032c.jpg',
 //   ];
 //   int activeIndex = 0;
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
 //       title: "APP 22",
 //       home: Scaffold(
 //         appBar: AppBar(
@@ -3704,7 +3836,7 @@ class MyApp extends StatelessWidget {
 //                     },
 //                     options: CarouselOptions(
 //                       height: 400,
-//                       // aspectRatio: 16 / 9,
+//                       aspectRatio: 16 / 9,
 //                       autoPlay: true,
 //                       // scrollDirection: Axis.vertical,
 //                       // clipBehavior: Clip.hardEdge,
@@ -4184,8 +4316,8 @@ class MyApp extends StatelessWidget {
 //         alignment: Alignment.center,
 //         child: ElevatedButton(
 //           onPressed: () {
-//             Navigator.push(context,
-//                 MaterialPageRoute(builder: (context) => const SecondScreen()));
+// Navigator.push(context,
+//     MaterialPageRoute(builder: (context) => const SecondScreen()));
 //           },
 //           style: ButtonStyle(
 //             elevation: MaterialStateProperty.resolveWith<double?>(
@@ -4323,9 +4455,7 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-
 // ************************  Splash Screen *********************************************
-
 
 // import 'package:flutter/material.dart';
 
@@ -4391,8 +4521,6 @@ class MyApp extends StatelessWidget {
 //     );
 //   }
 // }
-
-
 
 // ************************  Firebase in Flutter****************************************
 
