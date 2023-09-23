@@ -1,38 +1,4 @@
-// *****************  Widget ,statemanagement(stateless and stateful widget), material app, Scaffold *******************
-
-// import 'package:flutter/material.dart';
-
-// void main() {
-//   runApp(const MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "App 1",
-//       home: Scaffold(
-//         backgroundColor: Colors.white70,
-//         appBar: AppBar(
-//           // toolbarHeight: 100,
-//           // leadingWidth: 100,
-//           title: const Text("day 4 : Widget"),
-//           leading: const Icon(Icons.home),
-//           backgroundColor: Colors.black,
-//         ),
-//         body: const Center(
-//           child: Text("Hello world"),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 // ***************************** Appbar ALL Property ****************************************
-
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -148,6 +114,40 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// *****************  Widget ,statemanagement(stateless and stateful widget), material app, Scaffold *******************
+
+// import 'package:flutter/material.dart';
+
+// void main() {
+//   runApp(const MyApp());
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       title: "App 1",
+//       home: Scaffold(
+//         backgroundColor: Colors.white70,
+//         appBar: AppBar(
+//           // toolbarHeight: 100,
+//           // leadingWidth: 100,
+//           title: const Text("day 4 : Widget"),
+//           leading: const Icon(Icons.home),
+//           backgroundColor: Colors.black,
+//         ),
+//         body: const Center(
+//           child: Text("Hello world"),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 
 // **************************** conatiner() Widget ********************************************
 
