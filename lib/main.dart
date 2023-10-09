@@ -4417,3 +4417,7 @@
 // *****************How to off rotation of page in app ***********************************
 
 // **************************How to make responsive a app*****************************
+
+//  ********** How to build an apk file in flutter using vscode | flutter apk release  ****************
+
+// flutter build apk --build-name 1.2.3 --build-number 99
