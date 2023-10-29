@@ -31,7 +31,6 @@
 //   }
 // }
 
-
 // **************************** conatiner() Widget ********************************************
 
 // import 'package:flutter/material.dart';
@@ -1922,52 +1921,54 @@
 
 // ************************** (B) Long List ***************************************
 
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-// void main() {
-//   runApp(
-//     MyApp(
-//       names: List<String>.generate(51, (a) => "Coders !! $a"),
-//       key: UniqueKey(),
-//     ),
-//   );
-// }
+void main() {
+  runApp(
+    MyApp(
+      names: List<String>.generate(51, (a) => "Coders !! $a"),
+      key: UniqueKey(),
+    ),
+  );
+}
 
-// class MyApp extends StatelessWidget {
-//   // const MyApp({super.key});
+class MyApp extends StatelessWidget {
+  // const MyApp({super.key});
 
-//   final List<String> names;
-//   const MyApp({
-//     required Key key,
-//     required this.names,
-//   }) : super(key: key);
+  // const MyApp({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "App 17",
-//       home: Scaffold(
-//         backgroundColor: Colors.white70,
-//         appBar: AppBar(
-//           // toolbarHeight: 100,
-//           // leadingWidth: 100,
-//           title: const Text("DAY 17 : (B) Long List"),
-//           // leading: const Icon(Icons.home),
-//           backgroundColor: Colors.black,
-//         ),
-//         body: ListView.builder(
-//           itemCount: names.length,
-//           itemBuilder: (context, index) {
-//             return ListTile(
-//               title: Text("Hii ${names[index]}"),
-//             );
-//           },
-//         ),
-//       ),
-//     );
-//   }
-// }
+  final List<String> names;
+  const MyApp({
+    required Key key,
+    required this.names,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "App 17",
+      home: Scaffold(
+        backgroundColor: Colors.white70,
+        appBar: AppBar(
+          // toolbarHeight: 100,
+          // leadingWidth: 100,
+          title: const Text("DAY 17 : (B) Long List"),
+          // leading: const Icon(Icons.home),
+          backgroundColor: Colors.black,
+        ),
+        body: ListView.builder(
+          itemCount: names.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text("Hii ${names[index]}"),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
 
 //************************************** Chat Gpt ***************************************/
 
