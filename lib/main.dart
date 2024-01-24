@@ -31,6 +31,26 @@
 //   }
 // }
 
+// import 'package:flutter/material.dart';
+// // ignore: depend_on_referenced_packages
+// // import 'package:get/get.dart';
+
+// void main() {
+//   runApp(const MyPage());
+// }
+
+// class MyPage extends StatelessWidget {
+//   const MyPage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('MyPage')),
+//       body: const Center(child: Text("Sanjiv Kushwaha")),
+//     );
+//   }
+// }
+
 
 // **************************** conatiner() Widget ********************************************
 
@@ -3645,123 +3665,123 @@
 
 // *****************************Carousel Slider in Flutter****************************
 
-// import 'package:flutter/material.dart';
-// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-// import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
-// void main() {
-//   runApp(const MyApp());
-// }
+void main() {
+  runApp(const MyApp());
+}
 
-// class MyApp extends StatefulWidget {
-//   const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
-//   @override
-//   State<MyApp> createState() => _MyAppState();
-// }
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
-// class _MyAppState extends State<MyApp> {
-//   final CarouselController controller = CarouselController();
-//   final List<String> urlImages = [
-//     'https://i.pinimg.com/736x/34/7f/c4/347fc4edd20259b416cb80b70e678161.jpg',
-//     'https://i.pinimg.com/474x/f1/0d/62/f10d626ce52523357ac621454fd28bcf.jpg',
-//     'https://i.pinimg.com/474x/98/4c/fe/984cfe0c5c541ecfc0974bdae3e8e35d.jpg',
-//     'https://i.pinimg.com/474x/0c/8b/c8/0c8bc83812858e1a8877aba392d16710.jpg',
-//     'https://i.pinimg.com/474x/f9/e5/f0/f9e5f0a54288e9df3fd7fc69cc38ec19.jpg',
-//     'https://i.pinimg.com/474x/1e/a8/31/1ea831ebd9c116b70c91b8b65bd802a7.jpg',
-//     'https://i.pinimg.com/474x/a1/10/b4/a110b45fdb22beda7c4a595fa7cf9dc9.jpg',
-//     'https://i.pinimg.com/474x/a8/20/42/a82042e9b865984f61658847ab2aedcc.jpg',
-//     'https://i.pinimg.com/474x/33/16/fb/3316fbe9c510a9451625f26e8f9326a4.jpg',
-//     'https://i.pinimg.com/474x/b6/7e/e6/b67ee640340bf451bc422803c440895b.jpg',
-//     'https://i.pinimg.com/474x/bb/88/e5/bb88e509dda004e9a2adcbe22e90e18b.jpg',
-//     'https://i.pinimg.com/474x/86/f7/d1/86f7d11fa2d09ee6426adc36b81543cf.jpg',
-//     'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     'https://images.pexels.com/photos/1662145/pexels-photo-1662145.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     'https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg?auto=compress&cs=tinysrgb&w=600',
-//     'https://www.hercircle.in/hcm/EngageImage/1A13836D-9D17-43E7-A4BA-C7FC5EFA33FD/D/8CC6C08D-189C-45DE-A2A7-BB6E496B3338.jpg',
-//     'http://buzz.iloveindia.com/wp-content/uploads/2015/09/beautiful-countries-15.1.jpg',
-//     'https://www.worldatlas.com/r/w960-q80/upload/66/a9/fb/shutterstock-337028624.jpg',
-//     'https://www.worldatlas.com/r/w960-q80/upload/04/02/a0/shutterstock-1168888261.jpg',
-//     'https://www.worldatlas.com/r/w960-q80/upload/45/17/72/shutterstock-571847170.jpg',
-//     'https://www.hercircle.in/hcm/EngageImage/1A13836D-9D17-43E7-A4BA-C7FC5EFA33FD/D/8CC6C08D-189C-45DE-A2A7-BB6E496B3338.jpg',
-//     'https://images.luxuryescapes.com/q_auto:good,c_fill,g_auto,w_1920,ar_16:9/7w6ov43xqju1nkgzfxt.webp',
-//     'https://i.pinimg.com/474x/d9/90/96/d9909698afb3026802216945e5d9ee0a.jpg',
-//     // 'https://c4.wallpaperflare.com/wallpaper/396/67/717/bmw-motorcycle-vehicle-bmw-s1000rr-wallpaper-preview.jpg',
-//     'https://i.pinimg.com/474x/60/7e/cc/607ecc1341fa5e81c01b6e6dd83a032c.jpg',
-//   ];
-//   int activeIndex = 0;
+class _MyAppState extends State<MyApp> {
+  final CarouselController controller = CarouselController();
+  final List<String> urlImages = [
+    'https://i.pinimg.com/736x/34/7f/c4/347fc4edd20259b416cb80b70e678161.jpg',
+    'https://i.pinimg.com/474x/f1/0d/62/f10d626ce52523357ac621454fd28bcf.jpg',
+    'https://i.pinimg.com/474x/98/4c/fe/984cfe0c5c541ecfc0974bdae3e8e35d.jpg',
+    'https://i.pinimg.com/474x/0c/8b/c8/0c8bc83812858e1a8877aba392d16710.jpg',
+    'https://i.pinimg.com/474x/f9/e5/f0/f9e5f0a54288e9df3fd7fc69cc38ec19.jpg',
+    'https://i.pinimg.com/474x/1e/a8/31/1ea831ebd9c116b70c91b8b65bd802a7.jpg',
+    'https://i.pinimg.com/474x/a1/10/b4/a110b45fdb22beda7c4a595fa7cf9dc9.jpg',
+    'https://i.pinimg.com/474x/a8/20/42/a82042e9b865984f61658847ab2aedcc.jpg',
+    'https://i.pinimg.com/474x/33/16/fb/3316fbe9c510a9451625f26e8f9326a4.jpg',
+    'https://i.pinimg.com/474x/b6/7e/e6/b67ee640340bf451bc422803c440895b.jpg',
+    'https://i.pinimg.com/474x/bb/88/e5/bb88e509dda004e9a2adcbe22e90e18b.jpg',
+    'https://i.pinimg.com/474x/86/f7/d1/86f7d11fa2d09ee6426adc36b81543cf.jpg',
+    'https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/1662145/pexels-photo-1662145.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://images.pexels.com/photos/206648/pexels-photo-206648.jpeg?auto=compress&cs=tinysrgb&w=600',
+    'https://www.hercircle.in/hcm/EngageImage/1A13836D-9D17-43E7-A4BA-C7FC5EFA33FD/D/8CC6C08D-189C-45DE-A2A7-BB6E496B3338.jpg',
+    'http://buzz.iloveindia.com/wp-content/uploads/2015/09/beautiful-countries-15.1.jpg',
+    'https://www.worldatlas.com/r/w960-q80/upload/66/a9/fb/shutterstock-337028624.jpg',
+    'https://www.worldatlas.com/r/w960-q80/upload/04/02/a0/shutterstock-1168888261.jpg',
+    'https://www.worldatlas.com/r/w960-q80/upload/45/17/72/shutterstock-571847170.jpg',
+    'https://www.hercircle.in/hcm/EngageImage/1A13836D-9D17-43E7-A4BA-C7FC5EFA33FD/D/8CC6C08D-189C-45DE-A2A7-BB6E496B3338.jpg',
+    'https://images.luxuryescapes.com/q_auto:good,c_fill,g_auto,w_1920,ar_16:9/7w6ov43xqju1nkgzfxt.webp',
+    'https://i.pinimg.com/474x/d9/90/96/d9909698afb3026802216945e5d9ee0a.jpg',
+    // 'https://c4.wallpaperflare.com/wallpaper/396/67/717/bmw-motorcycle-vehicle-bmw-s1000rr-wallpaper-preview.jpg',
+    'https://i.pinimg.com/474x/60/7e/cc/607ecc1341fa5e81c01b6e6dd83a032c.jpg',
+  ];
+  int activeIndex = 0;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       title: "APP 22",
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: const Text("Image Slider"),
-//           leading: const Icon(
-//             Icons.apple,
-//             size: 50,
-//           ),
-//         ),
-//         body: Padding(
-//           padding: const EdgeInsets.all(8.0),
-//           child: Center(
-//             child: SingleChildScrollView(
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   CarouselSlider.builder(
-//                     carouselController: controller,
-//                     itemCount: urlImages.length,
-//                     itemBuilder: (context, index, realIndex) {
-//                       final urlImage = urlImages[index];
-//                       return buildImage(urlImage, index);
-//                     },
-//                     options: CarouselOptions(
-//                       height: 400,
-//                       aspectRatio: 16 / 9,
-//                       autoPlay: true,
-//                       // scrollDirection: Axis.vertical,
-//                       // clipBehavior: Clip.hardEdge,
-//                       enableInfiniteScroll: false,
-//                       autoPlayAnimationDuration: const Duration(seconds: 2),
-//                       enlargeCenterPage: true,
-//                       onPageChanged: (index, reason) =>
-//                           setState(() => activeIndex = index),
-//                     ),
-//                   ),
-//                   const SizedBox(height: 12),
-//                   buildIndicator(),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "APP 22",
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Image Slider"),
+          leading: const Icon(
+            Icons.apple,
+            size: 50,
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CarouselSlider.builder(
+                    carouselController: controller,
+                    itemCount: urlImages.length,
+                    itemBuilder: (context, index, realIndex) {
+                      final urlImage = urlImages[index];
+                      return buildImage(urlImage, index);
+                    },
+                    options: CarouselOptions(
+                      height: 400,
+                      aspectRatio: 16 / 9,
+                      autoPlay: true,
+                      // scrollDirection: Axis.vertical,
+                      // clipBehavior: Clip.hardEdge,
+                      enableInfiniteScroll: false,
+                      autoPlayAnimationDuration: const Duration(seconds: 2),
+                      enlargeCenterPage: true,
+                      onPageChanged: (index, reason) =>
+                          setState(() => activeIndex = index),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  buildIndicator(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
-//   Widget buildIndicator() => AnimatedSmoothIndicator(
-//         onDotClicked: (index) => animateToSlide(index),
-//         effect: const ExpandingDotsEffect(
-//             dotWidth: 15, activeDotColor: Colors.blue),
-//         activeIndex: activeIndex,
-//         count: urlImages.length,
-//       );
+  Widget buildIndicator() => AnimatedSmoothIndicator(
+        onDotClicked: (index) => animateToSlide(index),
+        effect: const ExpandingDotsEffect(
+            dotWidth: 15, activeDotColor: Colors.blue),
+        activeIndex: activeIndex,
+        count: urlImages.length,
+      );
 
-//   void animateToSlide(int index) {
-//     controller.animateToPage(index);
-//   }
+  void animateToSlide(int index) {
+    controller.animateToPage(index);
+  }
 
-//   Widget buildImage(String urlImage, int index) => Container(
-//         margin: const EdgeInsets.symmetric(horizontal: 5),
-//         child: Image.network(
-//           urlImage,
-//           fit: BoxFit.cover,
-//         ),
-//       );
-// }
+  Widget buildImage(String urlImage, int index) => Container(
+        margin: const EdgeInsets.symmetric(horizontal: 5),
+        child: Image.network(
+          urlImage,
+          fit: BoxFit.cover,
+        ),
+      );
+}
 
 // ************************ Switch and Tables *****************************************
 
