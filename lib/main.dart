@@ -117,62 +117,62 @@
 
 // ****************** Listview.builder all property *********************************
 
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+// void main() {
+//   runApp(const MyApp());
+// }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('ListView.builder Example'),
-        ),
-        body: const MyListView(),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       home: Scaffold(
+//         appBar: AppBar(
+//           title: const Text('ListView.builder Example'),
+//         ),
+//         body: const MyListView(),
+//       ),
+//     );
+//   }
+// }
 
-class MyListView extends StatelessWidget {
-  const MyListView({super.key});
+// class MyListView extends StatelessWidget {
+//   const MyListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 100, // Number of items in the list
-      itemBuilder: (BuildContext context, int index) {
-        return ListTile(
-          title: Text('Item $index'),
-        );
-      },
-      scrollDirection: Axis.vertical,
-      // scrollDirection: Axis.horizontal,
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       itemCount: 100, // Number of items in the list
+//       itemBuilder: (BuildContext context, int index) {
+//         return ListTile(
+//           title: Text('Item $index'),
+//         );
+//       },
+//       scrollDirection: Axis.vertical,
+//       // scrollDirection: Axis.horizontal,
 
-      reverse: false,
-      // controller: ScrollController(),
-      // primary: true,
-      physics: const BouncingScrollPhysics(),
-      // shrinkWrap: true,
-      padding: const EdgeInsets.all(16.0),
-      itemExtent: 50.0,
-      addAutomaticKeepAlives: true,
-      addRepaintBoundaries: true,
-      addSemanticIndexes: true,
-      cacheExtent: 100.0,
-      semanticChildCount: 10,
-      // dragStartBehavior: DragStartBehavior.start,
-      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
-      restorationId: 'myListView',
-      clipBehavior: Clip.hardEdge,
-    );
-  }
-}
+//       reverse: false,
+//       // controller: ScrollController(),
+//       // primary: true,
+//       physics: const BouncingScrollPhysics(),
+//       // shrinkWrap: true,
+//       padding: const EdgeInsets.all(16.0),
+//       itemExtent: 50.0,
+//       addAutomaticKeepAlives: true,
+//       addRepaintBoundaries: true,
+//       addSemanticIndexes: true,
+//       cacheExtent: 100.0,
+//       semanticChildCount: 10,
+//       // dragStartBehavior: DragStartBehavior.start,
+//       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.manual,
+//       restorationId: 'myListView',
+//       clipBehavior: Clip.hardEdge,
+//     );
+//   }
+// }
 // *=======================ListView.builder  scrollDirection: Axis.vertical property ==========================================
 // import 'package:flutter/material.dart';
 
@@ -4663,3 +4663,5 @@ class MyListView extends StatelessWidget {
 // *****************How to off rotation of page in app ***********************************
 
 // **************************How to make responsive a app*****************************
+
+
