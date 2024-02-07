@@ -4440,3 +4440,38 @@ class _MyAppState extends State<MyApp> {
 //  ********** How to build an apk file in flutter using vscode | flutter apk release  ****************
 
 // flutter build apk --build-name 1.2.3 --build-number 99
+
+// *****Launch Phone and WhatsApp | Flutter Url Launcher***********************************************************
+// ***********************Flutter URL Launcher | Opening URLs in Web Browser and In App WebView***************************
+
+// ****For Android ***************AndroidManifest.xml *************************************
+// <!-- Provide required visibility configuration for API level 30 and above -->
+// <queries>
+//   <!-- If your app checks for SMS support -->
+//   <intent>
+//     <action android:name="android.intent.action.VIEW" />
+//     <data android:scheme="sms" />
+//   </intent>
+//   <!-- If your app checks for call support -->
+//   <intent>
+//     <action android:name="android.intent.action.VIEW" />
+//     <data android:scheme="tel" />
+//   </intent>
+//   <!-- If your application checks for inAppBrowserView launch mode support -->
+//   <intent>
+//     <action android:name="android.support.customtabs.action.CustomTabsService" />
+//   </intent>
+// </queries>
+
+// **In Application
+//  android:usesCleartextTraffic="true"
+
+// ****************For Ios : info.plist ***************************
+
+
+// <key>LSApplicationQueriesSchemes</key>
+// <array>
+//   <string>sms</string>
+//   <string>tel</string>
+// </array>
+
