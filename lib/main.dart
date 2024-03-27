@@ -1,38 +1,5 @@
 // *****************  Widget ,statemanagement(stateless and stateful widget), material app, Scaffold *******************
 
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "App 1",
-      home: Scaffold(
-        backgroundColor: Colors.white70,
-        appBar: AppBar(
-          // toolbarHeight: 100,
-          // leadingWidth: 100,
-          title: const Text("day 4 : Widget"),
-          leading: const Icon(Icons.home),
-          backgroundColor: Colors.white60,
-        ),
-        body: const Center(
-          child: Text("Hello world"),
-        ),
-      ),
-    );
-  }
-}
-
-// **************************** conatiner() Widget ********************************************
-
 // import 'package:flutter/material.dart';
 
 // void main() {
@@ -46,39 +13,72 @@ class MyApp extends StatelessWidget {
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
 //       debugShowCheckedModeBanner: false,
-//       title: "App 2",
+//       title: "App 1",
 //       home: Scaffold(
 //         backgroundColor: Colors.white70,
 //         appBar: AppBar(
-//           title: const Text("day 5 : Container Widget"),
+//           // toolbarHeight: 100,
+//           // leadingWidth: 100,
+//           title: const Text("day 4 : Widget"),
 //           leading: const Icon(Icons.home),
-//           backgroundColor: Colors.black,
+//           backgroundColor: Colors.white60,
 //         ),
-//         body: Container(
-//           height: 200,
-//           width: 300,
-//           margin: const EdgeInsets.all(10),
-//           padding: const EdgeInsets.all(5),
-//           alignment: Alignment.center,
-//           // color: Colors.deepOrangeAccent, // Error
-//           decoration: BoxDecoration(
-//               border: Border.all(width: 4, color: Colors.black),
-//               color: const Color.fromARGB(255, 219, 219, 8),
-//               borderRadius: BorderRadius.circular(5),
-//               // borderRadius: BorderRadius.circular(1000),
-//               boxShadow: const [
-//                 BoxShadow(color: Colors.deepPurple, offset: Offset(6.0, 6.0))
-//               ]),
-//           // transform: Matrix4.rotationX(0.1),
-//           // transform: Matrix4.rotationY(0.1),
-//           transform: Matrix4.rotationZ(0.1),
-//           constraints: const BoxConstraints.expand(height: 400, width: 300),
-//           child: const Text("Hey Coders !!........... Sanjiv : Happy Coding !"),
+//         body: const Center(
+//           child: Text("Hello world"),
 //         ),
 //       ),
 //     );
 //   }
 // }
+
+// **************************** conatiner() Widget ********************************************
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "App 2",
+      home: Scaffold(
+        backgroundColor: Colors.white70,
+        appBar: AppBar(
+          title: const Text("day 5 : Container Widget"),
+          leading: const Icon(Icons.home),
+          backgroundColor: Colors.black,
+        ),
+        body: Container(
+          height: 200,
+          width: 300,
+          margin: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
+          alignment: Alignment.center,
+          // color: Colors.deepOrangeAccent, // Error
+          decoration: BoxDecoration(
+              border: Border.all(width: 4, color: Colors.black),
+              color: const Color.fromARGB(255, 219, 219, 8),
+              borderRadius: BorderRadius.circular(5),
+              // borderRadius: BorderRadius.circular(1000),
+              boxShadow: const [
+                BoxShadow(color: Colors.deepPurple, offset: Offset(6.0, 6.0))
+              ]),
+          // transform: Matrix4.rotationX(0.1),
+          // transform: Matrix4.rotationY(0.1),
+          transform: Matrix4.rotationZ(0.1),
+          constraints: const BoxConstraints.expand(height: 400, width: 300),
+          child: const Text("Hey Coders !!........... Sanjiv : Happy Coding !"),
+        ),
+      ),
+    );
+  }
+}
 
 // ****************************  Row and column ********************************************
 
