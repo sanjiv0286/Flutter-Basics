@@ -1,4 +1,4 @@
-// ***************************** Appbar ALL Property ****************************************
+// ***************************** Appbar ALL Property ************************
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -19,100 +19,201 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-        length: 2, // Number of tabs
-        child: SafeArea(
-          child: Scaffold(
-            appBar: AppBar(
-              key: const Key('myAppBar'), // Unique key
-              leading: IconButton(
-                icon: const Icon(Icons.menu),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            key: const Key('myAppBar'), // Unique key
+            leading: IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                // Add your action here
+              },
+            ),
+            title: const Text(
+              'My App',
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+            ),
+            actions: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.search),
                 onPressed: () {
-                  // Add your action here
+                  // Add your search action here
                 },
               ),
-              // automaticallyImplyLeading: false, // No automatic back button
-              title: const Text(
-                'My App',
-                style: TextStyle(
-                  fontSize: 20.0,
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {
+                  // Add your settings action here
+                },
+              ),
+            ],
+            flexibleSpace: Container(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.blue, Color.fromARGB(255, 13, 214, 40)],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
               ),
-              actions: <Widget>[
-                IconButton(
-                  icon: const Icon(Icons.search),
-                  onPressed: () {
-                    // Add your search action here
-                  },
-                ),
-                IconButton(
-                  icon: const Icon(Icons.settings),
-                  onPressed: () {
-                    // Add your settings action here
-                  },
-                ),
-              ],
-              flexibleSpace: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.blue, Color.fromARGB(255, 13, 214, 40)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                ),
-              ),
-              bottom: const PreferredSize(
-                preferredSize: Size.fromHeight(48.0),
-                child: TabBar(
-                  tabs: <Widget>[
-                    Tab(text: 'Tab 1'),
-                    Tab(text: 'Tab 2'),
-                  ],
-                ),
-              ),
-              elevation: 5.0,
-              scrolledUnderElevation: 2.0,
-              notificationPredicate: (ScrollNotification notification) {
-                return true; // React to all scroll notifications
-              },
-              shadowColor: Colors.grey,
-              surfaceTintColor: Colors.white,
-              shape: const RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(20.0),
-                ),
-              ),
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
-              iconTheme: const IconThemeData(color: Colors.white),
-              actionsIconTheme: const IconThemeData(color: Colors.white),
-              // primary: false, // Not the primary app bar
-              centerTitle: true,
-              excludeHeaderSemantics: true,
-              titleSpacing: 0.0,
-              toolbarOpacity: 0.8,
-              bottomOpacity: 0.9,
-              toolbarHeight: 56.0,
-              leadingWidth: 60.0,
-              toolbarTextStyle: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-              titleTextStyle: const TextStyle(
-                fontStyle: FontStyle.italic,
-              ),
-              systemOverlayStyle: SystemUiOverlayStyle.light,
-              forceMaterialTransparency: true,
-              clipBehavior: Clip.antiAlias,
             ),
-            body: const Center(
-              child: Text('Hello, Flutter!'),
+            elevation: 5.0,
+            scrolledUnderElevation: 2.0,
+            notificationPredicate: (ScrollNotification notification) {
+              return true; // React to all scroll notifications
+            },
+            shadowColor: Colors.grey,
+            surfaceTintColor: Colors.white,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(20.0),
+              ),
             ),
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            iconTheme: const IconThemeData(color: Colors.white),
+            actionsIconTheme: const IconThemeData(color: Colors.white),
+            centerTitle: true,
+            excludeHeaderSemantics: true,
+            titleSpacing: 0.0,
+            toolbarOpacity: 0.8,
+            bottomOpacity: 0.9,
+            toolbarHeight: 56.0,
+            leadingWidth: 60.0,
+            toolbarTextStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+            titleTextStyle: const TextStyle(
+              fontStyle: FontStyle.italic,
+            ),
+            systemOverlayStyle: SystemUiOverlayStyle.light,
+            forceMaterialTransparency: true,
+            clipBehavior: Clip.antiAlias,
+          ),
+          body: const Center(
+            child: Text('Hello, Flutter!'),
           ),
         ),
       ),
     );
   }
 }
+
+
+// import 'package:device_preview/device_preview.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+
+// void main() async {
+//   runApp(
+//     DevicePreview(
+//       enabled: true,
+//       builder: (context) => const MyApp(),
+//     ),
+//   );
+// }
+
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: DefaultTabController(
+//         length: 2, // Number of tabs
+//         child: SafeArea(
+//           child: Scaffold(
+//             appBar: AppBar(
+//               key: const Key('myAppBar'), // Unique key
+//               leading: IconButton(
+//                 icon: const Icon(Icons.menu),
+//                 onPressed: () {
+//                   // Add your action here
+//                 },
+//               ),
+//               // automaticallyImplyLeading: false, // No automatic back button
+//               title: const Text(
+//                 'My App',
+//                 style: TextStyle(
+//                   fontSize: 20.0,
+//                 ),
+//               ),
+//               actions: <Widget>[
+//                 IconButton(
+//                   icon: const Icon(Icons.search),
+//                   onPressed: () {
+//                     // Add your search action here
+//                   },
+//                 ),
+//                 IconButton(
+//                   icon: const Icon(Icons.settings),
+//                   onPressed: () {
+//                     // Add your settings action here
+//                   },
+//                 ),
+//               ],
+//               flexibleSpace: Container(
+//                 decoration: const BoxDecoration(
+//                   gradient: LinearGradient(
+//                     colors: [Colors.blue, Color.fromARGB(255, 13, 214, 40)],
+//                     begin: Alignment.topLeft,
+//                     end: Alignment.bottomRight,
+//                   ),
+//                 ),
+//               ),
+//               bottom: const PreferredSize(
+//                 preferredSize: Size.fromHeight(48.0),
+//                 child: TabBar(
+//                   tabs: <Widget>[
+//                     Tab(text: 'Tab 1'),
+//                     Tab(text: 'Tab 2'),
+//                   ],
+//                 ),
+//               ),
+//               elevation: 5.0,
+//               scrolledUnderElevation: 2.0,
+//               notificationPredicate: (ScrollNotification notification) {
+//                 return true; // React to all scroll notifications
+//               },
+//               shadowColor: Colors.grey,
+//               surfaceTintColor: Colors.white,
+//               shape: const RoundedRectangleBorder(
+//                 borderRadius: BorderRadius.vertical(
+//                   bottom: Radius.circular(20.0),
+//                 ),
+//               ),
+//               backgroundColor: Colors.blue,
+//               foregroundColor: Colors.white,
+//               iconTheme: const IconThemeData(color: Colors.white),
+//               actionsIconTheme: const IconThemeData(color: Colors.white),
+//               // primary: false, // Not the primary app bar
+//               centerTitle: true,
+//               excludeHeaderSemantics: true,
+//               titleSpacing: 0.0,
+//               toolbarOpacity: 0.8,
+//               bottomOpacity: 0.9,
+//               toolbarHeight: 56.0,
+//               leadingWidth: 60.0,
+//               toolbarTextStyle: const TextStyle(
+//                 fontWeight: FontWeight.bold,
+//               ),
+//               titleTextStyle: const TextStyle(
+//                 fontStyle: FontStyle.italic,
+//               ),
+//               systemOverlayStyle: SystemUiOverlayStyle.light,
+//               forceMaterialTransparency: true,
+//               clipBehavior: Clip.antiAlias,
+//             ),
+//             body: const Center(
+//               child: Text('Hello, Flutter!'),
+//             ),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 // ****************** Listview.builder all property *********************************
 
